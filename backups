@@ -1,0 +1,42 @@
+#!/bin/bash
+# Jerry's backups
+echo "Rsync backups, make sure external drive is switched on first!"
+echo ""
+read -p "Press [Enter] key to start backup..."
+echo "Backups commencing:"
+sleep 3
+echo ""
+
+rsync -arv --delete --progress --stats /home/jerry/.local/share/Steam/ /spare/backups/home/hidden_home_folder_all/.local/share/Steam/ --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /home/jerry/.thunderbird/ /spare/backups/home/hidden_home_folder_all/.thunderbird/ --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /home/jerry/.conky/ /spare/backups/home/hidden_home_folder_all/.conky/ --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /home/jerry/.filezilla/ /spare/backups/home/hidden_home_folder_all/.filezilla/ --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /home/jerry/.git-credential-cache/ /spare/backups/home/hidden_home_folder_all/.git-credential-cache/ --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /home/jerry/.ftblauncher/ /spare/backups/home/hidden_home_folder_all/.ftblauncher/ --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /home/jerry/.remmina/ /spare/backups/home/hidden_home_folder_all/.remmina/ --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /home/jerry/.steam/ /spare/backups/home/hidden_home_folder_all/.steam/ --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /home/jerry/.ts3client/ /spare/backups/home/hidden_home_folder_all/.ts3client/ --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /home/jerry/.VirtualBox/ /spare/backups/home/hidden_home_folder_all/.VirtualBox/ --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /home/jerry/.xbmc/ /spare/backups/home/hidden_home_folder_all/.xbmc/ --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /home/jerry/.xchat2/ /spare/backups/home/hidden_home_folder_all/.xchat2/ --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /home/jerry/.xmms/ /spare/backups/home/hidden_home_folder_all/.xmms/ --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /home/jerry/.bash_history /spare/backups/home/hidden_home_folder_all/.bash_history --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /home/jerry/.gitconfig /spare/backups/home/hidden_home_folder_all/.gitconfig --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /home/jerry/.gtk-bookmarks /spare/backups/home/hidden_home_folder_all/.gtk-bookmarks --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /home/jerry/git/ /spare/backups/home/hidden_home_folder_all/git/ --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /home/jerry/.gtkrc-2.0 /spare/backups/home/hidden_home_folder_all/.gtkrc-2.0 --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /spare/backups/home/ /media/backup/backups/home/ --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /spare/backups/linux_lite_project_all/ /media/backup/backups/linux_lite_project_all/ --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /spare/backups/server-files/ /media/backup/backups/server-files/ --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /spare/mpz/ /media/backup/backups/mpz/ --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /spare/backups/sites/ /media/backup/backups/sites/ --log-file=/home/jerry/rsync.log
+rsync -arv --delete --progress --stats /spare/backups/bookmarks.html /media/backup/backups/bookmarks.html --log-file=/home/jerry/rsync.log
+rsync -arv --progress --stats "/home/jerry/VirtualBox VMs/" /media/backup/backups/linuxlite_virtual_machines/ --log-file=/home/jerry/rsync.log
+rsync -arv --progress --stats /spare/VMs/ /media/backup/backups/linuxlite_virtual_machines/ --log-file=/home/jerry/rsync.log
+rsync -arv --progress --stats /home/jerry/Downloads/tor/ /media/backup/backups/home/Downloads/tor/ --log-file=/home/jerry/rsync.log
+rsync -arv --progress --stats /home/jerry/Downloads/tor/ /spare/backups/home/Downloads/tor/ --log-file=/home/jerry/rsync.log
+
+echo ""
+echo "Backups complete."
+echo "Press any Key to close this window."
+read -n1 any_key
